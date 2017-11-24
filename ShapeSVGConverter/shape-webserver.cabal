@@ -1,0 +1,23 @@
+name:                shape-webserver
+version:             0.1.0.0
+description:         Shape language webserver implementation. Takes a Shape DSL input and converts it to a SVG image. Both input and output handled through a Scotty webserver.
+author:              Sean Durban, Glenn Strong
+copyright:           Glenn Strong
+category:            Web
+build-type:          Simple
+license:              None
+cabal-version:       >=1.10
+
+executable shape-webserver
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  other-modules:       Shapes
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base >= 4.2 && < 5
+                     , blaze-html
+                     , scotty
+                     , blaze-svg
+                     , text
+                     , blaze-markup
+
+  default-language:    Haskell2010
